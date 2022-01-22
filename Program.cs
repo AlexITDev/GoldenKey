@@ -12,7 +12,7 @@ namespace Main
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private void Show(string type)
+        private void Show(int length, string type)
         {
             for (int i = 0; i < 100; i++)
             {
@@ -46,31 +46,31 @@ namespace Main
  
             if (option == "1")
             {
-                Show(letters);
+                Show(length, letters);
             }
             else if (option == "2")
             {
-                Show(numbers);
+                Show(length, numbers);
             }
             else if (option == "3")
             {
-                Show(symbols);
+                Show(length, symbols);
             }
             else if (option == "4")
             {
-                Show(letters + numbers);
+                Show(length, letters + numbers);
             }
             else if (option == "5")
             {
-                Show(symbols + numbers);
+                Show(length, symbols + numbers);
             }
             else if (option == "6")
             {
-                Show(letters + symbols);
+                Show(length, letters + symbols);
             }
             else if (option == "7")
             {
-                Show(letters + numbers + symbols);
+                Show(length, letters + numbers + symbols);
             }
             else
             {
@@ -150,7 +150,6 @@ namespace Main
         }
 
     }
-
     class Program
     {
         static void Main(string[] args)
@@ -160,3 +159,4 @@ namespace Main
         }
     }
 }
+
