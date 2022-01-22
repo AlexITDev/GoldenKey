@@ -3,7 +3,6 @@ using System.Linq;
 
 namespace Main
 {
-    
     public class GoldenKey
     {
         private string RandomString(int length, string type)
