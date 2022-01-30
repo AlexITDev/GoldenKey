@@ -1,29 +1,15 @@
-﻿using System;
+using System;
 using System.Linq;
 
+
 namespace Main
-{
+{ 
     public class GoldenKey
     {
-        private string RandomString(int length, string type)
-        {
-            var random = new Random();
-            return new string(Enumerable.Repeat(type, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
-        private void Show(int length, string type)
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                if (i < 10)
-                    Console.WriteLine("[0" + i + "]---> " + RandomString(length, type));
-                else
-                    Console.WriteLine("[" + i + "]---> " + RandomString(length, type));
-            }
-        }
         public void GeneratePassw()
         {
+            Console.WriteLine("Generate");
+
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("\n[01] Only letters");
             Console.WriteLine("[02] Only numbers");
@@ -43,51 +29,200 @@ namespace Main
 
             Console.Write("[+] Password length: ");
             int length = Convert.ToInt32(Console.ReadLine());
- 
+            var random = new Random();
+
+            string randomString(int len, string type)
+            {
+                return new string(Enumerable.Repeat(type, len)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+            }
+
+            void show(string type)
+            {
+                for (int i = 0; i < 100; i++)
+                {
+                    if (i < 10)
+                    {
+                        Console.WriteLine("[0" + i + "]---> " + randomString(length, type));
+                    }
+                    else
+                    {
+                        Console.WriteLine("[" + i + "]---> " + randomString(length, type));
+                    }
+
+                }
+            }
+
             if (option == "1")
             {
-                Show(length, letters);
+                show(letters);
             }
             else if (option == "2")
             {
-                Show(length, numbers);
+                show(numbers);
             }
             else if (option == "3")
             {
-                Show(length, symbols);
+                show(symbols);
             }
             else if (option == "4")
             {
-                Show(length, letters + numbers);
+                show(letters + numbers);
             }
             else if (option == "5")
             {
-                Show(length, symbols + numbers);
+                show(symbols + numbers);
             }
             else if (option == "6")
             {
-                Show(length, letters + symbols);
+                show(letters + symbols);
             }
             else if (option == "7")
             {
-                Show(length, letters + numbers + symbols);
+                show(letters + numbers + symbols);
             }
             else
             {
                 GeneratePassw();
             }
         }
-
     }
 
+    public class CheckPassword
+    {
+        public void Check()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write("\n[+] Write your password: ");
+            string password = Console.ReadLine();
+
+            int points = 0;
+
+            string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string lowercase = "abcdefghijklmnopqrstuvwxyz";
+            string numbers = "0123456789";
+            string symbols = "./^|*&?!@#()_+-=";
+
+            bool isUpper = false;
+            bool isLower = false;
+            bool isNumber = false;
+            bool isSymbol = false;
+
+            if (password.Length >= 10 && password.Length <= 15)
+            {
+                points++;
+            }
+            else if (password.Length >= 15 && password.Length <= 20)
+            {
+                points += 2;
+            }
+            else if (password.Length >= 20)
+            {
+                points += 3;
+            }
+
+            for (int i = 0; i < uppercase.Length; i++)
+            {
+                Boolean result = password.Contains(uppercase[i]);
+                if (result)
+                    isUpper = true;
+            }
+            for (int j = 0; j < lowercase.Length; j++)
+            {
+                Boolean result = password.Contains(lowercase[j]);
+                if (result)
+                    isLower = true;
+            }
+            for (int k = 0; k < numbers.Length; k++)
+            {
+                Boolean result = password.Contains(numbers[k]);
+                if (result)
+                    isNumber = true;
+            }
+            for (int m = 0; m < symbols.Length; m++)
+            {
+                Boolean result = password.Contains(symbols[m]);
+                if (result)
+                    isSymbol = true;
+            }
+
+            if (isUpper)
+                points++;
+            if (isLower)
+                points++;
+            if (isNumber)
+                points++;
+            if (isSymbol)
+                points++;
+
+            void Existance(bool type)
+            {
+                if (type)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("True\n");
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write("False\n");
+                }
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+
+            Console.Write("[+] Length - ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(password.Length + "\n");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+
+            Console.Write("[+] Uppercase - ");
+            Existance(isUpper);
+
+            Console.Write("[+] Lowercase - ");
+            Existance(isLower);
+
+            Console.Write("[+] Numbers - ");
+            Existance(isNumber);
+
+            Console.Write("[+] Symbols - ");
+            Existance(isSymbol);
+
+            Console.WriteLine("\n[+] Points: " + points);
+
+            Console.Write("<!> Your password is - ");
+            if (points <= 3)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("too weak!\n");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+            else if (points > 3 && points < 5)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write("average!\n");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+            else if (points >= 5 && points < 7)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("strong!\n");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("very strong!\n");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+            }
+        }
+    }
     public class StartWindow
     {
         private void Options()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("[01] Generate password");
-            Console.WriteLine("[02] Bruteforce");
-            Console.WriteLine("[03] ");
+            Console.WriteLine("[02] Check password");
             Console.WriteLine("[..] ");
             Console.WriteLine("[99] Exit");
         }
@@ -103,12 +238,17 @@ namespace Main
                 string choice = Console.ReadLine();
 
                 var g = new GoldenKey();
+                var cp = new CheckPassword();
 
                 Console.Write("\n");
 
                 if (choice == "1")
                 {
                     g.GeneratePassw();
+                }
+                if (choice == "2")
+                {
+                    cp.Check();
                 }
                 if (choice == "99")
                 {
@@ -121,7 +261,6 @@ namespace Main
                     Choice();
                 }
             }
-
         }
         public void Title()
         {
@@ -148,7 +287,6 @@ namespace Main
             Options();
             Choice();
         }
-
     }
     class Program
     {
@@ -159,4 +297,3 @@ namespace Main
         }
     }
 }
-
