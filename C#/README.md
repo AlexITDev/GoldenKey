@@ -1,1 +1,2 @@
-C# Version for Windows
+# Windows version of GoldenKey 
+- Written in C#
