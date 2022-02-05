@@ -1,2 +1,2 @@
-GoldenKey - password tool.
+# GoldenKey - password tool.
 
