@@ -139,7 +139,8 @@ class GoldenKey:
         print(options)
     
     def Title(self):
-        title = """
+        version = "v.0.7.0"
+        title = f"""
   _____       _     _            _  __          
  / ____|     | |   | |          | |/ /          
 | |  __  ___ | | __| | ___ _ __ | ' / ___ _   _ 
@@ -150,7 +151,7 @@ class GoldenKey:
                                           |___/ 
 ------------------------------------------------
 Creator: AlexITDev, 2022 year
-Version: GoldenKey v.0.1.0
+Version: GoldenKey {version}
 ------------------------------------------------
 """
         print(title)
