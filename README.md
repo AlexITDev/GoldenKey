@@ -4,7 +4,7 @@ ____
 ## Abilities:
 + ***Generate passwords***
 + ***Check password strength***
-+ ***Store passwords safely***
++ ***Store passwords safely(Comming soon)***
 ____
 # Windows
 *Ensure [**Visual Studio**](https://visualstudio.microsoft.com/downloads/, "Download Visual Studio") & [**Git**](https://git-scm.com/downloads, "Download Git") are installed!*
