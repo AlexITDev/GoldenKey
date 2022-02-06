@@ -1,0 +1,7 @@
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\bin\Debug\Main.exe.config
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\bin\Debug\Main.exe
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\bin\Debug\Main.pdb
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\obj\Debug\Main.csprojAssemblyReference.cache
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\obj\Debug\Main.csproj.CoreCompileInputs.cache
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\obj\Debug\Main.exe
+C:\Users\alexi\Desktop\CODE\C#\Main\Main\obj\Debug\Main.pdb
