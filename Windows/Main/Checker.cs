@@ -38,25 +38,25 @@ namespace Main
 
             for (int i = 0; i < uppercase.Length; i++)
             {
-                Boolean result = password.Contains(uppercase[i]);
+                bool result = password.Contains(uppercase[i]);
                 if (result)
                     isUpper = true;
             }
             for (int j = 0; j < lowercase.Length; j++)
             {
-                Boolean result = password.Contains(lowercase[j]);
+                bool result = password.Contains(lowercase[j]);
                 if (result)
                     isLower = true;
             }
             for (int k = 0; k < numbers.Length; k++)
             {
-                Boolean result = password.Contains(numbers[k]);
+                bool result = password.Contains(numbers[k]);
                 if (result)
                     isNumber = true;
             }
             for (int m = 0; m < symbols.Length; m++)
             {
-                Boolean result = password.Contains(symbols[m]);
+                bool result = password.Contains(symbols[m]);
                 if (result)
                     isSymbol = true;
             }
@@ -131,5 +131,4 @@ namespace Main
             }
         }
     }
-    class Checker {}
 }

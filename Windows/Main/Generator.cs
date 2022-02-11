@@ -7,8 +7,6 @@ namespace Main
     {
         public void GeneratePassw()
         {
-            Console.WriteLine("Generate");
-
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("\n[01] Only letters");
             Console.WriteLine("[02] Only numbers");
@@ -30,55 +28,54 @@ namespace Main
             int length = Convert.ToInt32(Console.ReadLine());
             var random = new Random();
 
-            string randomString(int len, string type)
+            string RandomString(int len, string type)
             {
                 return new string(Enumerable.Repeat(type, len)
                     .Select(s => s[random.Next(s.Length)]).ToArray());
             }
 
-            void show(string type)
+            void Show(string type)
             {
                 for (int i = 0; i < 100; i++)
                 {
                     if (i < 10)
                     {
-                        Console.WriteLine("[0" + i + "]---> " + randomString(length, type));
+                        Console.WriteLine("[0" + i + "]---> " + RandomString(length, type));
                     }
                     else
                     {
-                        Console.WriteLine("[" + i + "]---> " + randomString(length, type));
+                        Console.WriteLine("[" + i + "]---> " + RandomString(length, type));
                     }
-
                 }
             }
 
             if (option == "1")
             {
-                show(letters);
+                Show(letters);
             }
             else if (option == "2")
             {
-                show(numbers);
+                Show(numbers);
             }
             else if (option == "3")
             {
-                show(symbols);
+                Show(symbols);
             }
             else if (option == "4")
             {
-                show(letters + numbers);
+                Show(letters + numbers);
             }
             else if (option == "5")
             {
-                show(symbols + numbers);
+                Show(symbols + numbers);
             }
             else if (option == "6")
             {
-                show(letters + symbols);
+                Show(letters + symbols);
             }
             else if (option == "7")
             {
-                show(letters + numbers + symbols);
+                Show(letters + numbers + symbols);
             }
             else
             {
@@ -86,5 +83,4 @@ namespace Main
             }
         }
     }
-    class Generator {}
 }
