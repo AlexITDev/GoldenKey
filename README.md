@@ -7,7 +7,7 @@ ____
 + ***Store passwords safely(Comming soon)***
 ____
 # Windows
-*Ensure [**Visual Studio**](https://visualstudio.microsoft.com/downloads/, "Download Visual Studio") & [**Git**](https://git-scm.com/downloads, "Download Git") are installed!*
+*Ensure [**IDE**](https://www.guru99.com/best-csharp-ide.html , "Download Visual Studio") & [**Git**](https://git-scm.com/downloads , "Download Git") are installed!*
 
 *Open **Visual Studio** and press **Clone a repository** button. Then link to this repository:*
 
@@ -41,7 +41,7 @@ Select **Windows** folder & double-tap **Main.sln** file.*
 # Linux
 ## Installation & Usage
 ____
-*Ensure [**Python 3.0+**](https://www.python.org/downloads/, "Download Python") & [**Git**](https://git-scm.com/downloads, "Download Git") are installed!*
+*Ensure [**Python 3.0+**](https://www.python.org/downloads/ , "Download Python") & [**Git**](https://git-scm.com/downloads , "Download Git") are installed!*
 
 ```console
 $ git clone https://github.com/AlexITDev/GoldenKey/
