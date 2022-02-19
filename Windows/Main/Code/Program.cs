@@ -6,9 +6,10 @@ namespace Main
     {
         static void Main(string[] args)
         {
-            String productVersion = "v0.1.0";
-            var s = new Window(productVersion);
-            s.Title();
+            string productVersion = "v0.1.0";
+            
+            var ui = new UI();
+            ui.ShowLabel(productVersion);
         }
     }
 }
