@@ -1,15 +1,13 @@
 ﻿using System;
 
 namespace Main
-{ 
+{
     class Program
     {
+        public static string productVersion = "v0.1.5";
         static void Main(string[] args)
         {
-            string productVersion = "v0.1.0";
-            
-            var ui = new UI();
-            ui.ShowLabel(productVersion);
+            UI.ShowLabel();
         }
     }
 }

@@ -5,15 +5,15 @@ namespace Main
 {
     public class Generator
     {
-        Random random = new Random();
+        static Random random = new Random();
 
-        public string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-        public string numbers = "0123456789";
-        public string symbols = "./^|*&?!@#()_+-=";
+        public static string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        public static string numbers = "0123456789";
+        public static string symbols = "./^|*&?!@#()_+-=";
 
-        public string RandomString(int len, string type)
+        public static string RandomString(int length, string type)
         {
-            return new string(Enumerable.Repeat(type, len)
+            return new string(Enumerable.Repeat(type, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }

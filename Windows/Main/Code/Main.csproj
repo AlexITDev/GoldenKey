@@ -44,9 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checker.cs" />
-    <Compile Include="ConsoleCommands.cs" />
+    <Compile Include="CheckPasswordUI.cs" />
+    <Compile Include="FileManager.cs" />
     <Compile Include="Generator.cs" />
+    <Compile Include="GeneratorUI.cs" />
     <Compile Include="PasswordManager.cs" />
+    <Compile Include="PasswordManagerUI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI.cs" />

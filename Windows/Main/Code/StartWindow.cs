@@ -14,8 +14,7 @@ namespace Main
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("[01] Generate password");
-            Console.WriteLine("[02] Check password strength");
-            Console.WriteLine("[03] Password manager");
+            Console.WriteLine("[02] Check password");
             Console.WriteLine("[..] ");
             Console.WriteLine("[99] Exit");
         }
@@ -24,32 +23,30 @@ namespace Main
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("\n[GoldenKey]--> ");
+
+                Console.Write("\n[Windows@User]--> ");
 
                 Console.ForegroundColor = ConsoleColor.White;
                 string choice = Console.ReadLine();
 
-                var goldenKey = new GoldenKey();
-                var checkPassword = new CheckPassword();
-                var passwordManager = new PasswordManager();
+                var g = new GoldenKey();
+                var cp = new CheckPassword();
 
                 Console.Write("\n");
 
                 if (choice == "1")
                 {
-                    goldenKey.GeneratePassw();
+                    g.GeneratePassw();
                 }
                 if (choice == "2")
                 {
-                    checkPassword.Check();
-                }
-                if (choice == "3")
-                {
-                    passwordManager.Manager();
+                    cp.Check();
                 }
                 if (choice == "99")
                 {
-                    System.Environment.Exit(0);
+                    string strCmdText;
+                    strCmdText = "exit";
+                    System.Diagnostics.Process.Start("CMD.exe", strCmdText);
                 }
                 else
                 {
@@ -77,8 +74,11 @@ namespace Main
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("-------------------------------------------------\n");
 
+            Console.ForegroundColor = ConsoleColor.White;
+
             Options();
             Choice();
         }
     }
+    class StartWindow {}
 }

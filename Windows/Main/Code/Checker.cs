@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace Main
 {
@@ -9,14 +8,14 @@ namespace Main
         public bool isLower = false;
         public bool isDigit = false;
         public bool isSymbol = false;
-        public int points = 0;
+        public static int points = 0;
 
-        public string lettersRow = "abcdefghijklmnopqrstuvwxyz";
-        public string digitsRow = "0123456789";
-        public string symbolsRow = "./^|*&?!@#()_+-=";
-        public int passwordSize = 10;
+        public static string lettersRow = "abcdefghijklmnopqrstuvwxyz";
+        public static string digitsRow = "0123456789";
+        public static string symbolsRow = "./^|*&?!@#()_+-=";
+        public static int passwordSize = 10;
 
-        public void Check(string password)
+        public static void Check(string password)
         {
             if (password.Length >= passwordSize && password.Length <= passwordSize + 5)
                 points++;
@@ -25,23 +24,18 @@ namespace Main
             else if (password.Length >= passwordSize + 10)
                 points += 3;
 
-            CountTypes(password, lettersRow.ToUpper());
-            CountTypes(password, lettersRow);
-            CountTypes(password, digitsRow);
-            CountTypes(password, symbolsRow);
-
-            isTrue(isUpper);
-            isTrue(isLower);
-            isTrue(isDigit);
-            isTrue(isSymbol);
+            isTrue(CountTypes(password, lettersRow.ToUpper()));
+            isTrue(CountTypes(password, lettersRow));
+            isTrue(CountTypes(password, digitsRow));
+            isTrue(CountTypes(password, symbolsRow));
         }
 
-        public void isTrue(bool checker)
+        private static void isTrue(bool checker)
         {
             if (checker)
                 points++;
         }
-        public bool CountTypes(string password, string type)
+        public static bool CountTypes(string password, string type)
         {
             for (int i = 0; i < type.Length; i++)
             {
@@ -51,7 +45,7 @@ namespace Main
             }
             return false;
         }
-        public bool Existance(bool type)
+        private bool Existance(bool type)
         {
             if (type)
                 return true;
