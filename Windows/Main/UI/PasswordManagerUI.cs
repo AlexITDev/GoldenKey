@@ -13,6 +13,7 @@ namespace Main
             Console.WriteLine("[04] Create Key");
             Console.WriteLine("[99] Menu");
         }
+
         public static void PasswManagerChoice()
         {
             while (true)
@@ -39,7 +40,7 @@ namespace Main
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.WriteLine("[+] Write key password: ");
                         string key = Console.ReadLine();
-                        string Key = System.IO.File.ReadAllText(keyFile);
+                        string Key = System.IO.File.ReadAllText(keyPath);
 
                         if (key == EncodePassw(Key))
                         {

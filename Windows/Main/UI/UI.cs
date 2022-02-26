@@ -73,6 +73,7 @@ namespace Main
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("Are you sure to exit? [y/n]: ");
                         string exitChoice = Console.ReadLine();
+
                         if (exitChoice.ToLower() == "y" || exitChoice.ToLower() == "yes")
                             System.Environment.Exit(0);
                         else if (exitChoice.ToLower() == "n" || exitChoice.ToLower() == "no")
