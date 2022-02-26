@@ -5,11 +5,12 @@ namespace Main
     public class Window
     {
         String productVersion;
-        public Window() {}
+
         public Window(String version)
         {
             productVersion = version;
         }
+
         private void Options()
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
@@ -18,6 +19,7 @@ namespace Main
             Console.WriteLine("[..] ");
             Console.WriteLine("[99] Exit");
         }
+
         private void Choice()
         {
             while (true)
@@ -29,18 +31,18 @@ namespace Main
                 Console.ForegroundColor = ConsoleColor.White;
                 string choice = Console.ReadLine();
 
-                var g = new GoldenKey();
-                var cp = new CheckPassword();
+                var goldenKey = new GoldenKey();
+                var checkPassword = new CheckPassword();
 
                 Console.Write("\n");
 
                 if (choice == "1")
                 {
-                    g.GeneratePassw();
+                    goldenKey.GeneratePassw();
                 }
                 if (choice == "2")
                 {
-                    cp.Check();
+                    checkPassword.Check();
                 }
                 if (choice == "99")
                 {
@@ -54,6 +56,7 @@ namespace Main
                 }
             }
         }
+
         public void Title()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -80,5 +83,4 @@ namespace Main
             Choice();
         }
     }
-    class StartWindow {}
 }

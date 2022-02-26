@@ -6,9 +6,9 @@ namespace Main
 {
     public class PasswordManager
     {
-        public static string dirPath = @"C:\\PasswordManager\\";
-        public static string filePath = @"C:\\PasswordManager\\passw.txt";
-        public static string keyFile = @"C:\\PasswordManager\\key.txt";
+        public static string dirPath = @"C:\PasswordManager\";
+        public static string filePath = @"C:\PasswordManager\passw.txt";
+        public static string keyPath = @"C:\PasswordManager\key.txt";
 
         public static string DecodePassw(string passw)
         {
@@ -25,8 +25,9 @@ namespace Main
 
         public static void SetupManager()
         {
-            FileManager.MakeFile(filePath, dirPath);
-            using (FileStream file = File.Create(keyFile)) { };
+            DirectoryInfo folder = Directory.CreateDirectory(dirPath);
+            FileStream file = File.Create(filePath);
+            FileStream keyfile = File.Create(keyPath);
         }
     }
 }
