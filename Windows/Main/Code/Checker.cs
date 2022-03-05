@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using ExtentionMethods;
+using System.Collections.Generic;
 
 namespace Main
 {
@@ -10,24 +11,22 @@ namespace Main
         public bool isSymbol = false;
         public static int points = 0;
 
-        public static string lettersRow = "abcdefghijklmnopqrstuvwxyz";
-        public static string digitsRow = "0123456789";
-        public static string symbolsRow = "./^|*&?!@#()_+-=";
+        public static List<string> passwElements = new List<string> { "abcdefghijklmnopqrstuvwxyz", "0123456789", "./^|*&?!@#()_+-=" };
         public static int passwordSize = 10;
 
         public static void Check(string password)
         {
-            if (password.Length >= passwordSize && password.Length <= passwordSize + 5)
+            if (password.Len() >= passwordSize && password.Len() <= passwordSize + 5)
                 points++;
-            else if (password.Length >= passwordSize + 5 && password.Length <= passwordSize + 10)
+            else if (password.Len() >= passwordSize + 5 && password.Len() <= passwordSize + 10)
                 points += 2;
-            else if (password.Length >= passwordSize + 10)
+            else if (password.Len() >= passwordSize + 10)
                 points += 3;
 
-            isTrue(CountTypes(password, lettersRow.ToUpper()));
-            isTrue(CountTypes(password, lettersRow));
-            isTrue(CountTypes(password, digitsRow));
-            isTrue(CountTypes(password, symbolsRow));
+            isTrue(CountTypes(password, passwElements[0].Upper()));
+            isTrue(CountTypes(password, passwElements[0]));
+            isTrue(CountTypes(password, passwElements[1]));
+            isTrue(CountTypes(password, passwElements[2]));
         }
 
         private static void isTrue(bool checker)
@@ -39,7 +38,7 @@ namespace Main
         {
             for (int i = 0; i < type.Length; i++)
             {
-                bool result = password.Contains(type[i]);
+                bool result = password.Existance(type[i].ToString());
                 if (result)
                     return true;
             }
