@@ -24,6 +24,8 @@ namespace Main
                 Console.ForegroundColor = ConsoleColor.White;
                 string option = Console.ReadLine();
 
+
+
                 switch (option)
                 {
                     case "1":
@@ -33,7 +35,7 @@ namespace Main
                         break;
 
                     case "2":
-                        FileManager.AddToFile(GetPassword());
+                        FileManager.Add(GetPassword());
                         break;
 
                     case "3":

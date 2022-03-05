@@ -28,16 +28,16 @@ namespace Main
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
             Console.Write("[+] Uppercase - ");
-            ColorLabel(CountTypes(password, lettersRow.ToUpper()));
+            ColorLabel(CountTypes(password, passwElements[0].ToUpper()));
 
             Console.Write("[+] Lowercase - ");
-            ColorLabel(CountTypes(password, lettersRow));
+            ColorLabel(CountTypes(password, passwElements[0]));
 
             Console.Write("[+] Numbers - ");
-            ColorLabel(CountTypes(password, digitsRow));
+            ColorLabel(CountTypes(password, passwElements[1]));
 
             Console.Write("[+] Symbols - ");
-            ColorLabel(CountTypes(password, symbolsRow));
+            ColorLabel(CountTypes(password, passwElements[2]));
 
             Console.WriteLine("\n[+] Points: " + points);
 
